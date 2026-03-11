@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="The 5-Day Reset is a free reflection series for overwhelmed mothers who want to come back to themselves gently."
+    />
+    <title>The 5-Day Reset | A Quiet Reflection Series for Mothers</title>
+    <style>
+      :root {
+        --bg: #f8f2ea;
+        --surface: rgba(255, 251, 245, 0.86);
+        --surface-strong: #fffaf5;
+        --text: #3f3530;
+        --text-soft: #665a52;
+        --accent: #9a6f66;
+        --accent-deep: #7f5852;
+        --sand: #dfc6af;
+        --taupe: #b89f90;
+        --ring: rgba(154, 111, 102, 0.35);
+        --shadow: 0 14px 34px rgba(90, 70, 56, 0.1);
+        --radius-lg: 24px;
+        --radius-md: 16px;
+        --max: 70rem;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: "Inter", "Avenir Next", "Segoe UI", Roboto, Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(110% 50% at 0% 0%, rgba(222, 198, 173, 0.35), transparent 70%),
+          radial-gradient(130% 50% at 100% 0%, rgba(196, 161, 154, 0.25), transparent 70%),
+          var(--bg);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      .page {
+        width: min(calc(100% - 2rem), var(--max));
+        margin-inline: auto;
+        padding-block: 1.5rem 3rem;
+      }
+
+      .stack > * + * {
+        margin-top: 1rem;
+      }
+
+      header,
+      section,
+      footer {
+        margin-top: 1.2rem;
+      }
+
+      .panel {
+        background: var(--surface);
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(6px);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        padding: 1.5rem;
+      }
+
+      .eyebrow {
+        font-size: 0.76rem;
+        font-weight: 600;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond", "Iowan Old Style", "Times New Roman", serif;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        line-height: 1.15;
+        color: #312722;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 9vw, 3.25rem);
+      }
+
+      h2 {
+        font-size: clamp(1.65rem, 6vw, 2.35rem);
+      }
+
+      h3 {
+        font-size: clamp(1.2rem, 4.4vw, 1.55rem);
+      }
+
+      p {
+        margin: 0;
+        color: var(--text-soft);
+        font-size: 1rem;
+      }
+
+      .hero {
+        padding: 2rem 1.5rem;
+      }
+
+      .hero p {
+        max-width: 34ch;
+      }
+
+      .cta-wrap {
+        margin-top: 1.35rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+        color: #fffdfb;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        min-height: 3rem;
+        width: 100%;
+        padding: 0.75rem 1.25rem;
+        cursor: pointer;
+        transition: transform 0.15s ease, filter 0.2s ease;
+      }
+
+      .btn:hover {
+        filter: brightness(1.05);
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      .btn:focus-visible,
+      .field:focus-visible {
+        outline: 3px solid var(--ring);
+        outline-offset: 2px;
+      }
+
+      .meta {
+        margin-top: 0.65rem;
+        font-size: 0.92rem;
+        color: #74675f;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .recognition {
+        padding: 1.4rem;
+      }
+
+      .recognition p + p {
+        margin-top: 0.75rem;
+      }
+
+      .question {
+        text-align: center;
+        padding: 2rem 1.4rem;
+        background:
+          linear-gradient(160deg, rgba(255, 252, 248, 0.9), rgba(252, 242, 234, 0.85));
+      }
+
+      .question p {
+        color: #4f433d;
+        font-family: "Cormorant Garamond", "Iowan Old Style", "Times New Roman", serif;
+        font-size: clamp(1.5rem, 6vw, 2.15rem);
+        line-height: 1.25;
+        margin-top: 0.65rem;
+      }
+
+      .preview-grid {
+        display: grid;
+        gap: 0.9rem;
+        margin-top: 1rem;
+      }
+
+      .day-card {
+        padding: 1.1rem 1.15rem;
+        border-radius: var(--radius-md);
+        background: var(--surface-strong);
+        border: 1px solid rgba(184, 159, 144, 0.35);
+      }
+
+      .day {
+        display: block;
+        color: var(--accent);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        font-weight: 600;
+      }
+
+      .signup {
+        padding: 1.45rem;
+      }
+
+      form {
+        margin-top: 1rem;
+      }
+
+      .field {
+        width: 100%;
+        min-height: 3rem;
+        border-radius: 999px;
+        border: 1px solid rgba(129, 103, 90, 0.35);
+        background: #fffdfb;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        color: var(--text);
+      }
+
+      .field::placeholder {
+        color: #8b7e76;
+      }
+
+      .form-row {
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      .reassure {
+        margin-top: 0.7rem;
+        font-size: 0.88rem;
+      }
+
+      footer {
+        text-align: center;
+        color: #7d6e64;
+        font-size: 0.86rem;
+        padding: 1rem 0 0.25rem;
+      }
+
+      @media (min-width: 48rem) {
+        .page {
+          padding-block: 2rem 3.8rem;
+        }
+
+        .hero,
+        .recognition,
+        .signup {
+          padding: 2rem;
+        }
+
+        .preview-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1rem;
+        }
+
+        .day-card:last-child {
+          grid-column: span 2;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr auto;
+          align-items: center;
+        }
+
+        .form-row .btn {
+          width: auto;
+          min-width: 16rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="panel hero stack" aria-labelledby="hero-title">
+        <p class="eyebrow">The 5-Day Reset</p>
+        <h1 id="hero-title">For mothers who feel far away from themselves</h1>
+        <p>A free 5-day reflection series to help you come back to yourself gently.</p>
+        <div class="cta-wrap">
+          <a class="btn" href="#join">Start the 5-Day Reset</a>
+          <p class="meta">Free • 5 short reflections • less than 2 minutes a day</p>
+        </div>
+      </header>
+
+      <section class="panel recognition stack" aria-labelledby="recognition-title">
+        <h2 id="recognition-title">If this season feels like too much, you're not alone</h2>
+        <p>
+          By the time homework is done, the schedules are rewritten, moods are steadied,
+          meals are made, and appointments are remembered, there can be very little of you left
+          at the end of the day.
+        </p>
+        <p>
+          You may look like you're holding everything together from the outside,
+          while quietly feeling farther and farther from your own voice.
+        </p>
+      </section>
+
+      <section class="panel question" aria-labelledby="question-title">
+        <p class="eyebrow" id="question-title">A quiet question</p>
+        <p>When was the last moment you felt like yourself?</p>
+      </section>
+
+      <section class="panel" aria-labelledby="preview-title">
+        <h2 id="preview-title">A gentle look at each day</h2>
+        <div class="preview-grid" role="list" aria-label="5-Day preview">
+          <article class="day-card" role="listitem">
+            <span class="day">Day 1</span>
+            <h3>You didn’t mean to disappear</h3>
+          </article>
+          <article class="day-card" role="listitem">
+            <span class="day">Day 2</span>
+            <h3>You adapted</h3>
+          </article>
+          <article class="day-card" role="listitem">
+            <span class="day">Day 3</span>
+            <h3>How are you, really?</h3>
+          </article>
+          <article class="day-card" role="listitem">
+            <span class="day">Day 4</span>
+            <h3>No is not rejection</h3>
+          </article>
+          <article class="day-card" role="listitem">
+            <span class="day">Day 5</span>
+            <h3>Coming back gently</h3>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel signup stack" id="join" aria-labelledby="join-title">
+        <p class="eyebrow">Free email series</p>
+        <h2 id="join-title">Start the 5-Day Reset</h2>
+        <p>Small, honest reflections you can read in less than two minutes each day.</p>
+
+        <form action="https://example.com/subscribe" method="post">
+          <label for="email" class="sr-only">Email address</label>
+          <div class="form-row">
+            <input
+              class="field"
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="Your email address"
+              required
+            />
+            <button type="submit" class="btn">Start the 5-Day Reset</button>
+          </div>
+          <p class="reassure">No pressure. Unsubscribe any time. Your inbox stays a gentle place.</p>
+        </form>
+      </section>
+
+      <footer>
+        <p>© <span id="year">2026</span> The Quiet Minute • A quiet place for mothers.</p>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <!--
+      Checklist:
+      - Mobile-first layout with responsive enhancements via media queries.
+      - Semantic structure includes header/main/section/article/form/footer and labels.
+      - Color choices are tuned for readable contrast on warm backgrounds.
+      - Form submits to placeholder action: https://example.com/subscribe.
+      - No frameworks, no backend, no external dependencies required.
+    -->
+  </body>
+</html>
